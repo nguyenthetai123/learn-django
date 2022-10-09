@@ -49,10 +49,10 @@ def register(request):
         password= request.POST.get('password')
         if User.objects.filter(username=username).exists():
             messages.error(request,'username id already exists')
-            return redirect('my_account')
+            return redirect('login')
         if User.objects.filter(email=email).exists():
             messages.error(request,'email id already exists')
-            return redirect('my_account')
+            return redirect('login')
         user= User(
             username=username,
             email=email,
@@ -60,7 +60,7 @@ def register(request):
         )
         user.set_password(password)
         user.save()
-    return redirect('my_account')
+    return redirect('login')
 
 def LOGIN(request):
     if request.method == 'POST':

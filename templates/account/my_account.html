@@ -47,7 +47,7 @@
                                     {% endif %}
                                 {% endfor %}
                             {%endif %}
-                            <form action="{%url 'login'%}" method='post' >
+                            <form action="{%url 'handle_login'%}" method='post' >
                                 {% csrf_token %}
                                 <label for="name">Username or email address  <span>*</span></label>
                                 <input id="name" type="text" placeholder="Enter Username" name='username'>
@@ -69,7 +69,7 @@
                     <div class="col-lg-6">
                         <div class="basic-login">
                             <h5>Register</h5>
-                            <form action="{%url 'register'%}" method='post'>
+                            <form action="{%url 'handle_register'%}" method='post'>
                                  {% csrf_token %}
                                 <label for="username">Username or email address  <span>*</span></label>
                                 <input id="username" type="text" placeholder="Enter Username" name='username'>
